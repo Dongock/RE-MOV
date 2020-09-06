@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Revue-mainpage{% endblock %}
+
+{% block style %}
+<style>
+  .responsive {
+    height: 20%;
+  }
+.slick-prev {
+    left: -25px;
+}
+.card-title {
+  cursor:pointer;
+}
+</style>
+{% endblock %}
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<h1>index page</h1>
+<h2>trending</h2>
+
+  <div class="responsive row">
+    {% for movie in trending_movies %}
+    <div class="card h-100 text-dark m-3" >
+      {% if movie.poster_path != null %}
+      <img src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}" class="card-img-top" alt="{{ movie.title }}의 포스터">
+       {% else %}
+      <img src="{% static 'image/null_image.jpg' %}" class="card-img-top">
+       {% endif %}
+      <div class="card-body">
+        <a data-toggle="modal" data-target="#modal{{movie.pk}}" class='text-decoration-none card-title'>{{ movie.ktitle }}</a>
+      </div>
+    </div>
+      {% endfor %}
+   </div>
+
+<h2>추천</h2>
+  <div class="responsive row">
+    {% for movie in movies %}
+    <div class="card h-100 text-dark m-3" >
+      {% if movie.poster_path != null %}
+      <img src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}" class="card-img-top" alt="{{ movie.title }}의 포스터">
+       {% else %}
+      <img src="{% static 'image/null_image.jpg' %}" class="card-img-top">
+       {% endif %}
+      <div class="card-body">
+        <a data-toggle="modal" data-target="#modal{{movie.pk}}" class='text-decoration-none card-title'>{{ movie.ktitle }}</a>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+
+{% if gender_age_movies %}
+  <h3>{{year}}대 {{gender}} 사용자들이 좋아하는 영화들입니다!</h3>
+  <div class="responsive row">
+    {% for movie in gender_age_movies %}
+    <div class="card h-100 text-dark m-3 " >
+      {% if movie.poster_path != null %}
+      <img src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}" class="card-img-top" alt="{{ movie.title }}의 포스터">
+       {% else %}
+      <img src="{% static 'image/null_image.jpg' %}" class="card-img-top">
+       {% endif %}
+      <div class="card-body">
+        <a data-toggle="modal" data-target="#modal{{movie.pk}}" class='text-decoration-none card-title'>{{ movie.ktitle }}</a>
+      </div>
+    </div>
+      {% endfor %}
+   </div>
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block modal %}
+{% for movie in trending_movies %}
+<div class="modal fade" id="modal{{movie.pk}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ movie.ktitle }}</h5>
+        <button type="button" class="btn btn-success ml-4"><a href="{% url 'movies:detail' movie.pk %}">상세정보</a></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if movie.backdrop_path != null %}
+        <img src="https://image.tmdb.org/t/p/w780/{{ movie.backdrop_path }}" class="img-fluid">
+        {% else %}
+        <img src="{% static 'image/null_image.jpg' %}" class="img-fluid">
+        {% endif %}
+        <hr>
+        <p>평점 : <span class="text-warning">{{ rate }}</span> {{ movie.vote_average }}</p>
+        <hr>
+        {% if movie.koverview %}
+          <p class="text-justify-center">{{ movie.koverview }}</p>
+        {% else %}
+          <p class="text-justify-center">{{ movie.eoverview }}</p>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        {% if user in movie.liked_users.all %}
+        <i class="fas fa-heart fa-lg like-button" style="color: red" data-id="{{ movie.pk }}"></i>
+      {% else %}
+        <i class="far fa-heart fa-lg like-button" style="color: black" data-id="{{ movie.pk }}"></i>
+      {% endif %}
+      <span id="like-count-{{ movie.pk }}">{{ movie.liked_users.all|length }}명이 이 영화를 좋아합니다</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% for movie in movies %}
+<div class="modal fade" id="modal{{movie.pk}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ movie.ktitle }}</h5>
+        <button type="button" class="btn btn-success ml-4"><a href="{% url 'movies:detail' movie.pk %}">상세정보</a></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if movie.backdrop_path != null %}
+        <img src="https://image.tmdb.org/t/p/w780/{{ movie.backdrop_path }}" class="img-fluid">
+        {% else %}
+        <img src="{% static 'image/null_image.jpg' %}" class="img-fluid">
+        {% endif %}
+        <hr>
+        <p>평점 : <span class="text-warning">{{ rate }}</span> {{ movie.vote_average }}</p>
+        <hr>
+        {% if movie.koverview %}
+          <p class="text-justify-center">{{ movie.koverview }}</p>
+        {% else %}
+          <p class="text-justify-center">{{ movie.eoverview }}</p>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        {% if user in movie.liked_users.all %}
+        <i class="fas fa-heart fa-lg like-button" style="color: red" data-id="{{ movie.pk }}"></i>
+      {% else %}
+        <i class="far fa-heart fa-lg like-button" style="color: black" data-id="{{ movie.pk }}"></i>
+      {% endif %}
+      <span id="like-count-{{ movie.pk }}">{{ movie.liked_users.all|length }}명이 이 영화를 좋아합니다</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% for movie in gender_age_movies %}
+<div class="modal fade" id="modal{{movie.pk}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ movie.ktitle }}</h5>
+        <button type="button" class="btn btn-success ml-4"><a href="{% url 'movies:detail' movie.pk %}">상세정보</a></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if movie.backdrop_path != null %}
+        <img src="https://image.tmdb.org/t/p/w780/{{ movie.backdrop_path }}" class="img-fluid">
+        {% else %}
+        <img src="{% static 'image/null_image.jpg' %}" class="img-fluid">
+        {% endif %}
+        <hr>
+        <p>평점 : <span class="text-warning">{{ rate }}</span> {{ movie.vote_average }}</p>
+        <hr>
+        {% if movie.koverview %}
+          <p class="text-justify-center">{{ movie.koverview }}</p>
+        {% else %}
+          <p class="text-justify-center">{{ movie.eoverview }}</p>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+      {% if user in movie.liked_users.all %}
+        <i class="fas fa-heart fa-lg like-button" style="color: red" data-id="{{ movie.pk }}"></i>
+      {% else %}
+        <i class="far fa-heart fa-lg like-button" style="color: black" data-id="{{ movie.pk }}"></i>
+      {% endif %}
+      <span id="like-count-{{ movie.pk }}">{{ movie.liked_users.all|length }}명이 이 영화를 좋아합니다</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+const likeButtonList = document.querySelectorAll('.like-button')
+  likeButtonList.forEach(likeButton => {
+    likeButton.addEventListener('click', function(event){
+      const movieId = likeButton.getAttribute('data-id')
+      axios.get(`/movies/${movieId}/movie_like/`)
+      .then(response =>{
+        const likeCount = response.data.count
+        document.querySelector(`#like-count-${movieId}`).innerText = `${likeCount} 명이 이 글을 좋아합니다.`
+        if (response.data.liked === true){
+          event.target.style.color = 'crimson'
+        } else{
+          event.target.style.color = 'black'
+        console.log(response.data.liked)}
+
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
+
+    })
+  })
+
+</script>
+<script>
+$('.responsive').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  infinite: true,
+  dots: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 2,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+  </script>
+
+
+{% endblock %}

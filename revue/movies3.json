@@ -1,0 +1,382 @@
+[
+        {
+            "model": "movies.movie",
+            "pk": 475430,
+            "fields": {
+                "ktitle": "아르테미스 파울",
+                "etitle": "Artemis Fowl",
+                "popularity": 71.399,
+                "vote_average": 5.2,
+                "vote_count": 43,
+                "adult": false,
+                "poster_path": "/ij1ZfANM3EJm6HHS0ZXycX5f74i.jpg",
+                "backdrop_path": "/o0F8xAt8YuEm5mEZviX5pEFC12y.jpg",
+                "original_language": "en",
+                "original_title": "Artemis Fowl",
+                "koverview": "",
+                "eoverview": "With the help of his loyal protector Butler, 12-year-old genius Artemis Fowl, descendant of a long line of criminal masterminds, seeks to find his mysteriously disappeared father, and in doing so, uncovers an ancient, underground civilization—the amazingly advanced world of fairies. Deducing that his father’s disappearance is somehow connected to the secretive, reclusive fairy world, cunning Artemis concocts a dangerous plan—so dangerous that he ultimately finds himself in a perilous war of wits with the all-powerful fairies.",
+                "release_date": "2020-06-12"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 508439,
+            "fields": {
+                "ktitle": "온워드: 단 하루의 기적",
+                "etitle": "Onward",
+                "popularity": 102.489,
+                "vote_average": 7.9,
+                "vote_count": 2160,
+                "adult": false,
+                "poster_path": "/5yaqWb6PnJQuASGTe7c1ontBrUt.jpg",
+                "backdrop_path": "/xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg",
+                "original_language": "en",
+                "original_title": "Onward",
+                "koverview": "마법이 사라진 세상, 달라도 너무 다른 두 형제인 용기부족 동생 이안(톰 홀랜드)과 의욕충만 형 발리(크리스 프랫). 이안은 16세 생일날, 엄마에게서 돌아가신 아빠의 선물인 마법봉을 받고 뜻하지 않게 아빠의 반쪽만 소환시키게 되는 상황에 처한다. 아빠의 온전한 모습을 만나기 위해 두 형제에게 주어진 미션. 마법이 통하는 주어진 시간은 단 하루, 두 형제는 모험을 통해 완벽한 아빠의 모습을 만나는 기적을 만들 수 있을까?",
+                "eoverview": "In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there.",
+                "release_date": "2020-02-29"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 579583,
+            "fields": {
+                "ktitle": "The King of Staten Island",
+                "etitle": "The King of Staten Island",
+                "popularity": 30.23,
+                "vote_average": 0,
+                "vote_count": 0,
+                "adult": false,
+                "poster_path": "/zQFjMmE3K9AX5QrBL1SXIxYQ9jz.jpg",
+                "backdrop_path": "/5rwcd24GGltKiqdPT4G2dmchLr9.jpg",
+                "original_language": "en",
+                "original_title": "The King of Staten Island",
+                "koverview": "",
+                "eoverview": "Scott has been a case of arrested development ever since his firefighter father died when he was seven. He’s now reached his mid-20s having achieved little, chasing a dream of becoming a tattoo artist that seems far out of reach. As his ambitious younger sister heads off to college, Scott is still living with his exhausted ER nurse mother and spends his days smoking weed, hanging with the guys—Oscar, Igor and Richie—and secretly hooking up with his childhood friend Kelsey. But when his mother starts dating a loudmouth firefighter named Ray, it sets off a chain of events that will force Scott to grapple with his grief and take his first tentative steps toward moving forward in life.",
+                "release_date": "2020-07-30"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 339095,
+            "fields": {
+                "ktitle": "라스트 데이스 오브 아메리칸 크라임",
+                "etitle": "The Last Days of American Crime",
+                "popularity": 170.994,
+                "vote_average": 5.5,
+                "vote_count": 104,
+                "adult": false,
+                "poster_path": "/ygCQnDEqUEIamBpdQdDYnFfxvgM.jpg",
+                "backdrop_path": "/t93doi7EzoqLFckidrGGnukFPwd.jpg",
+                "original_language": "en",
+                "original_title": "The Last Days of American Crime",
+                "koverview": "일주일 후면 신호가 켜진다. 범죄 발생을 막기 위해, 개인의 머릿속을 통제하려는 정부. 자유가 사라지기 전에, 베테랑 은행 강도가 일생일대의 마지막 범죄를 계획한다.",
+                "eoverview": "In the not-too-distant future, where as a final response to crime and terrorism, the U.S. government plans to broadcast a signal that will make it impossible for anyone to knowingly break the law.",
+                "release_date": "2020-06-05"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 534928,
+            "fields": {
+                "ktitle": "Darkness Falls",
+                "etitle": "Darkness Falls",
+                "popularity": 6.497,
+                "vote_average": 6,
+                "vote_count": 1,
+                "adult": false,
+                "poster_path": "/x3kIdLy2g9kUHqBUdNx3E5VlbOb.jpg",
+                "backdrop_path": "/le0hpD8i02BKbXfRKkwZi9xyrfZ.jpg",
+                "original_language": "en",
+                "original_title": "Darkness Falls",
+                "koverview": "",
+                "eoverview": "After his wife's suicide, Detective Jeff Anderson becomes convinced that she has been murdered. Obsessed with his investigation, he finds out that his wife was the victim of a team of father-and-son serial killers and sets out to stop them.",
+                "release_date": "2020-03-07"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 664413,
+            "fields": {
+                "ktitle": "365 데이즈",
+                "etitle": "365 Days",
+                "popularity": 64.875,
+                "vote_average": 7.1,
+                "vote_count": 888,
+                "adult": false,
+                "poster_path": "/ibaDBJBAvWd4J5lzfbpq1PJ6ZU1.jpg",
+                "backdrop_path": "/27nn2YJBwY7a1etZ0AiIcOrIgu3.jpg",
+                "original_language": "pl",
+                "original_title": "365 dni",
+                "koverview": "",
+                "eoverview": "Laura, in order to save her relationship from falling apart, goes to Sicily, where she meets Massimo. A dangerous man, the head of a mafia family, kidnaps her and gives her 365 days to fall in love with him.",
+                "release_date": "2020-02-07"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 581859,
+            "fields": {
+                "ktitle": "Da 5 블러드",
+                "etitle": "Da 5 Bloods",
+                "popularity": 57.802,
+                "vote_average": 7.2,
+                "vote_count": 29,
+                "adult": false,
+                "poster_path": "/yx4cp1ljJMDSFeEex0Zjv45b55E.jpg",
+                "backdrop_path": "/qEqv2j1QVzGjDsb9IoOCkVQTdQb.jpg",
+                "original_language": "en",
+                "original_title": "Da 5 Bloods",
+                "koverview": "4인의 아프리카계 미국인 참전 용사가 베트남으로 돌아온다. 분대장의 유해와 숨겨둔 황금을 찾아 정글로 들어가는 그들. 마지막 수색 작전이 시작된다.",
+                "eoverview": "Four African American Vietnam veterans return to Vietnam. They are in search of the remains of their fallen squad leader and the promise of buried treasure. These heroes battle forces of humanity and nature while confronted by the lasting ravages of the immorality of the Vietnam War.",
+                "release_date": "2020-06-12"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 338762,
+            "fields": {
+                "ktitle": "블러드샷",
+                "etitle": "Bloodshot",
+                "popularity": 91.839,
+                "vote_average": 7,
+                "vote_count": 2576,
+                "adult": false,
+                "poster_path": "/5S45aZzCo6rIeE8zLsffi5lCYz6.jpg",
+                "backdrop_path": "/ocUrMYbdjknu2TwzMHKT9PBBQRw.jpg",
+                "original_language": "en",
+                "original_title": "Bloodshot",
+                "koverview": "아내와 함께 휴가를 보내던 특수 부대원 ‘레이’(빈 디젤)는 정체불명의 적에게 납치되어 살해당한다. 혈액 속에 수많은 나노봇을 주입하는 최첨단 프로젝트 블러드샷을 통해 부활한 레이. 놀라운 치유력과 가공할 만한 파워의 슈퍼 히어로로 업그레이드된 레이는 아내를 죽인 놈을 찾아 무차별적인 복수의 질주를 시작한다. 하지만, 자신이 진짜라고 생각했던 것들이 거짓임을 깨닫게 되는데… 복수의 시작, 액션의 끝! 2020년 액션 블록버스터의 최종 진화를 확인하라!",
+                "eoverview": "After he and his wife are murdered, marine Ray Garrison is resurrected by a team of scientists. Enhanced with nanotechnology, he becomes a superhuman, biotech killing machine—'Bloodshot'. As Ray first trains with fellow super-soldiers, he cannot recall anything from his former life. But when his memories flood back and he remembers the man that killed both him and his wife, he breaks out of the facility to get revenge, only to discover that there's more to the conspiracy than he thought.",
+                "release_date": "2020-03-05"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 702936,
+            "fields": {
+                "ktitle": "스나이퍼: 암살자의 최후",
+                "etitle": "Sniper: Assassin's End",
+                "popularity": 66.828,
+                "vote_average": 4.9,
+                "vote_count": 8,
+                "adult": false,
+                "poster_path": "/20TZbCFTCyfTwkDJ3F060elYaKX.jpg",
+                "backdrop_path": "/3i2xnGLUAteDpSke5C9w2fhYmfL.jpg",
+                "original_language": "en",
+                "original_title": "Sniper: Assassin's End",
+                "koverview": "특수부대 출신 주인공이 무역 협정 파기로 경제적 부당이익을 얻으려는 기업의 음모에 휘말려 암살자로 쫓기면서 이를 극복하고 혐의를 벗는 과정을 그린 극영화",
+                "eoverview": "Special Ops sniper Brandon Beckett is set up as the primary suspect for the murder of a foreign dignitary on the eve of signing a high-profile trade agreement with the United States. Narrowly escaping death, Beckett realizes that there may be a dark operative working within the government, and partners with the only person whom he can trust: his father, legendary sniper Sgt. Thomas Beckett. Both Becketts are on the run from the CIA, Russian mercenaries and Lady Death, a Yakuza-trained assassin with sniper skills that rival both legendary sharpshooters.",
+                "release_date": "2020-06-15"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 495764,
+            "fields": {
+                "ktitle": "버즈 오브 프레이: 할리 퀸의 황홀한 해방",
+                "etitle": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+                "popularity": 80.606,
+                "vote_average": 7.2,
+                "vote_count": 4440,
+                "adult": false,
+                "poster_path": "/cT3NC2gZXFmmQyPVpxJoJTucOFT.jpg",
+                "backdrop_path": "/kvbbK2rLGSJh9rf6gg1i1iVLYQS.jpg",
+                "original_language": "en",
+                "original_title": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+                "koverview": "오랜 연인이던 조커와 헤어진 할리 퀸(마고 로비)은 처음 맞이한 해방에 황홀함을 느낀다. 하지만 조커라는 방패막이 사라지자 평생 처음 무방비 상태에 놓인 할리 퀸을 고담시에서 가장 비열한 범죄왕 로만 시오니스(이완 맥그리거)와 고담의 모든 갱들이 노린다. 통제 불능의 상태에서 카산드라라는 소매치기가 로만의 부하에게서 모든 권력과 고담시 지하 세계 전체의 지배권을 차지할 열쇠인 금융 정보가 암호화되어 있는 다이아몬드를 훔치면서 사건을 걷잡을 수 없이 급변한다. 로만 손에 죽을 위기에 처한 할리 퀸은 헌트리스, 블랙 카나리, 르네 몬토야와 새로운 팀을 결성해 로만에 맞서는데...",
+                "eoverview": "Harley Quinn joins forces with a singer, an assassin and a police detective to help a young girl who had a hit placed on her after she stole a rare diamond from a crime lord.",
+                "release_date": "2020-02-05"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 454626,
+            "fields": {
+                "ktitle": "수퍼 소닉",
+                "etitle": "Sonic the Hedgehog",
+                "popularity": 156.596,
+                "vote_average": 7.5,
+                "vote_count": 4523,
+                "adult": false,
+                "poster_path": "/pMXOlasWr1IzHGH8HWw1ZTXs6rQ.jpg",
+                "backdrop_path": "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+                "original_language": "en",
+                "original_title": "Sonic the Hedgehog",
+                "koverview": "소리보다 빠른 초고속 고슴도치 히어로 '소닉'은 지구에 불시착한다. 그의 특별한 능력을 감지한 과학자 ‘닥터 로보트닉’은 세계 정복의 야욕을 채우려 하고, 경찰관 ‘톰’은 위험에 빠진 ‘소닉’을 돕기 위해 나서는데…! 과연, ‘소닉'은 천재 악당에 맞서 지구를 지킬 수 있을까?",
+                "eoverview": "Based on the global blockbuster videogame franchise from Sega, Sonic the Hedgehog tells the story of the world’s speediest hedgehog as he embraces his new home on Earth. In this live-action adventure comedy, Sonic and his new best friend team up to defend the planet from the evil genius Dr. Robotnik and his plans for world domination.",
+                "release_date": "2020-02-12"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 601844,
+            "fields": {
+                "ktitle": "베키",
+                "etitle": "Becky",
+                "popularity": 51.943,
+                "vote_average": 6.6,
+                "vote_count": 26,
+                "adult": false,
+                "poster_path": "/xqbQtMffXwa3oprse4jiHBMBvdW.jpg",
+                "backdrop_path": "/qTrpw2ZUvN7ywUu1kieEsvNDrgQ.jpg",
+                "original_language": "en",
+                "original_title": "Becky",
+                "koverview": "",
+                "eoverview": "A teenager's weekend at a lake house with her father takes a turn for the worse when a group of convicts wreaks havoc on their lives.",
+                "release_date": "2020-06-05"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 514847,
+            "fields": {
+                "ktitle": "헌트",
+                "etitle": "The Hunt",
+                "popularity": 100.993,
+                "vote_average": 6.7,
+                "vote_count": 846,
+                "adult": false,
+                "poster_path": "/8mS3VvzeDfw6VdgQQbXsunNBEit.jpg",
+                "backdrop_path": "/naXUDz0VGK7aaPlEpsuYW8kNVsr.jpg",
+                "original_language": "en",
+                "original_title": "The Hunt",
+                "koverview": "낯선 사람들과 함께 의문의 지역에 갇혀 영문도 모른 채 사냥 당하고 있는 ‘크리스탈’(베티 길핀)이 자신들을 사냥하는 주체를 밝히고, 그들을 찾아 복수하기 위해 고군분투하는 이야기",
+                "eoverview": "Twelve strangers wake up in a clearing. They don't know where they are—or how they got there. In the shadow of a dark internet conspiracy theory, ruthless elitists gather at a remote location to hunt humans for sport. But their master plan is about to be derailed when one of the hunted turns the tables on her pursuers.",
+                "release_date": "2020-03-11"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 520900,
+            "fields": {
+                "ktitle": "The Personal History of David Copperfield",
+                "etitle": "The Personal History of David Copperfield",
+                "popularity": 10.829,
+                "vote_average": 6.4,
+                "vote_count": 21,
+                "adult": false,
+                "poster_path": "/zEGUyzFWCHYuDFtZCC1lErXRvVR.jpg",
+                "backdrop_path": "/tZZXvAnfrR58C64O3o3Ox4zUkSI.jpg",
+                "original_language": "en",
+                "original_title": "The Personal History of David Copperfield",
+                "koverview": "",
+                "eoverview": "A fresh and distinctive take on Charles Dickens’ semi-autobiographical masterpiece, The Personal History of David Copperfield, set in the 1840s, chronicles the life of its iconic title character as he navigates a chaotic world to find his elusive place within it. From his unhappy childhood to the discovery of his gift as a storyteller and writer, David’s journey is by turns hilarious and tragic, but always full of life, colour and humanity.",
+                "release_date": "2019-11-07"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 533444,
+            "fields": {
+                "ktitle": "웨이브스",
+                "etitle": "Waves",
+                "popularity": 42.456,
+                "vote_average": 7.7,
+                "vote_count": 148,
+                "adult": false,
+                "poster_path": "/7px5mxpsRGR4hnxQF1dJ5zptFO4.jpg",
+                "backdrop_path": "/jQ06O9JAFN0VfDS4ezE09pfoj2h.jpg",
+                "original_language": "en",
+                "original_title": "Waves",
+                "koverview": "고등학생 타일러는 완벽해 보인다. 부유한 부모와 멋진 집, 착한 여동생, 예쁜 여자친구까지 있는 그는 교내 레슬링 대표 선수다. 하지만 그의 삶을 한 꺼풀 벗겨 보면 치명적 부상을 입은 상태에, 아버지는 강압적이며, 여자친구는 임신을 한 상황이다. 이제 이야기는 파국으로 향하고 이내 다른 이야기가 시작된다.",
+                "eoverview": "A controlling father’s attempts to ensure that his two children succeed in high school backfire after his son experiences a career-ending sports injury. Their familial bonds are eventually placed under severe strain by an unexpected tragedy.",
+                "release_date": "2019-11-15"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 38700,
+            "fields": {
+                "ktitle": "나쁜 녀석들: 포에버",
+                "etitle": "Bad Boys for Life",
+                "popularity": 72.608,
+                "vote_average": 7.2,
+                "vote_count": 4311,
+                "adult": false,
+                "poster_path": "/anhvhTzdjzMLzGV8oTFNssvMTIw.jpg",
+                "backdrop_path": "/upUy2QhMZEmtypPW3PdieKLAHxh.jpg",
+                "original_language": "en",
+                "original_title": "Bad Boys for Life",
+                "koverview": "마이애미 강력반의 베테랑 형사 ‘마이크’(윌 스미스)는 여전히 범죄자를 소탕하는 데 열성적이지만, 그의 파트너 ‘마커스’(마틴 로렌스)는 이제 일선에서 물러나 가족과 함께 시간을 보내고 싶어한다. 마커스의 은퇴를 만류하던 마이크가 정체를 알 수 없는 거대 조직의 위협을 받으며 일생일대의 위험에 빠지게 된다. 가족만큼 중요한 마이크를 위해 마커스가 합류하고, 우리의 ‘나쁜 녀석들’은 신식 무기와 기술을 장착한 루키팀 AMMO와 함께 힘을 합쳐 일생일대 마지막 미션을 수행하게 되는데…",
+                "eoverview": "Marcus and Mike are forced to confront new threats, career changes, and midlife crises as they join the newly created elite team AMMO of the Miami police department to take down the ruthless Armando Armas, the vicious leader of a Miami drug cartel.",
+                "release_date": "2020-01-15"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 181812,
+            "fields": {
+                "ktitle": "스타워즈: 라이즈 오브 스카이워커",
+                "etitle": "Star Wars: The Rise of Skywalker",
+                "popularity": 72.311,
+                "vote_average": 6.5,
+                "vote_count": 4862,
+                "adult": false,
+                "poster_path": "/opENUWyvrxvsXrRM3qq4wmJDCo2.jpg",
+                "backdrop_path": "/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg",
+                "original_language": "en",
+                "original_title": "Star Wars: The Rise of Skywalker",
+                "koverview": "포스의 균형을 교란시키는 퍼스트 오더의 수장 카일로 렌(애덤 드라이버)의 횡포가 극에 달한다. 저항군의 수장 레아 장군(캐리 피셔)은 스타킬러 기지 파괴에는 성공하나 저항군 세력의 상당수를 잃고 전략적 후퇴를 선택한다. 퍼스트 오더 군대 내에 스파이를 두어 동태를 살피던 포다메론(오스카 아이삭)은 팰퍼틴(이언 맥디어미드)이 생존해 군대를 꾸린다는 첩보를 접한다. 제다이 수련에 빠져 있던 레이(데이지 리들리), 능숙한 파일럿으로 거듭난 핀(존 보예가)과 포를 비롯한 소수 정예의 저항군은 팰퍼틴이 숨어 있다고 알려진 다크 사이드의 본거지 엑시골의 위치를 알아내기 위한 비밀작전을 수행한다.",
+                "eoverview": "The surviving Resistance faces the First Order once again as the journey of Rey, Finn and Poe Dameron continues. With the power and knowledge of generations behind them, the final battle begins.",
+                "release_date": "2019-12-18"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 522627,
+            "fields": {
+                "ktitle": "젠틀맨",
+                "etitle": "The Gentlemen",
+                "popularity": 54.818,
+                "vote_average": 7.7,
+                "vote_count": 1390,
+                "adult": false,
+                "poster_path": "/361ksMhxn9tCYhVvzfkW8c2ZLYl.jpg",
+                "backdrop_path": "/tintsaQ0WLzZsTMkTiqtMB3rfc8.jpg",
+                "original_language": "en",
+                "original_title": "The Gentlemen",
+                "koverview": "유럽을 장악한 업계의 절대강자 믹키 피어슨(매튜 맥커너히)은 자신이 세운 마리화나 제국을 부유한 미국인 매튜(제레미 스트롱)에게 팔아넘기려 하는데, 주변인들이 그런 그를 가만히 두지 않는다. 한 사람은 믹키에게 앙심을 품은 타블로이드지의 편집장 빅 데이브(에디 마산)가 고용한 사립탐정 플레처(휴 그랜트)다. 플레처는 믹키와 그의 오른팔 레이먼드(찰리 허냄)를 염탐한다. 다른 사람은 중국계 갱스터 드라이 아이(헨리 골딩)다. 믹키의 사업을 인수하려다 거절당한 드라이 아이는 모종의 음모를 꾸민다. 그 와중에 믹키의 대마초 재배 지하실마저 젊은 괴한들에게 공격당하는데...",
+                "eoverview": "American expat Mickey Pearson has built a highly profitable marijuana empire in London. When word gets out that he’s looking to cash out of the business forever it triggers plots, schemes, bribery and blackmail in an attempt to steal his domain out from under him.",
+                "release_date": "2020-01-01"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 703134,
+            "fields": {
+                "ktitle": "Infamous",
+                "etitle": "Infamous",
+                "popularity": 42.067,
+                "vote_average": 1,
+                "vote_count": 1,
+                "adult": false,
+                "poster_path": "/dRd2k3Eqx1M2BFDvN1wlIRnRzl5.jpg",
+                "backdrop_path": "/7OxY4KgCpr2UiksjSk4FB8gnQiA.jpg",
+                "original_language": "en",
+                "original_title": "Infamous",
+                "koverview": "",
+                "eoverview": "Two young lovers rob their way across the southland, posting their exploits to social media, and gaining fame and followers as a result.",
+                "release_date": "2020-06-12"
+            }
+        },
+        {
+            "model": "movies.movie",
+            "pk": 299534,
+            "fields": {
+                "ktitle": "어벤져스: 엔드게임",
+                "etitle": "Avengers: Endgame",
+                "popularity": 47.09,
+                "vote_average": 8.3,
+                "vote_count": 13584,
+                "adult": false,
+                "poster_path": "/n78LK2t1uQP68Ud0VXHRe0HmKOp.jpg",
+                "backdrop_path": "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+                "original_language": "en",
+                "original_title": "Avengers: Endgame",
+                "koverview": "어벤져스의 패배 이후 지구는 초토화됐고 남은 절반의 사람들은 정신적 고통을 호소하며 하루하루를 근근이 버텨나간다. 와칸다에서 싸우다 생존한 히어로들과 우주의 타이탄 행성에서 싸우다 생존한 히어로들이 뿔뿔이 흩어졌는데, 아이언맨과 네뷸라는 우주를 떠돌고 있고 지구에 남아 있는 어벤져스 멤버들은 닉 퓨리가 마지막에 신호를 보내다 만 송신기만 들여다보며 혹시 모를 우주의 응답을 기다리는 중이다. 애초 히어로의 삶을 잠시 내려놓고 가족과 시간을 보내던 호크아이 역시 헤아릴 수 없는 마음의 상처를 입은 채 사라지고 마는데...",
+                "eoverview": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+                "release_date": "2019-04-24"
+            }
+        }
+    ]

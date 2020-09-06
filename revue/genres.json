@@ -1,0 +1,156 @@
+[
+    {
+        "model": "movies.genre",
+        "pk": 12,
+        "fields": {
+            "ename": "Adventure",
+            "kname": "모험"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 14,
+        "fields": {
+            "ename": "Fantasy",
+            "kname": "판타지"
+
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 16,
+        "fields": {
+            "ename": "Animation",
+            "kname": "애니메이션"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 18,
+        "fields": {
+            "ename": "Drama",
+            "kname": "드라마"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 27,
+        "fields": {
+            "ename": "Horror",
+            "kname": "공포"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 28,
+        "fields": {
+            "ename": "Action",
+            "kname": "액션"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 35,
+        "fields": {
+            "ename": "Comedy",
+            "kname": "코미디"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 36,
+        "fields": {
+            "ename": "History",
+            "kname": "역사"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 37,
+        "fields": {
+            "ename": "Western",
+            "kname": "서부"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 53,
+        "fields": {
+            "ename": "Thriller",
+            "kname": "스릴러"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 80,
+        "fields": {
+            "ename": "Crime",
+            "kname": "범죄"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 99,
+        "fields": {
+            "ename": "Documentary",
+            "kname": "다큐멘터리"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 878,
+        "fields": {
+            "ename": "Sci-Fi",
+            "kname": "공상 과학"
+
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 9648,
+        "fields": {
+            "ename": "Mystery",
+            "kname": "미스터리"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 10402,
+        "fields": {
+            "ename": "Music",
+            "kname": "음악"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 10749,
+        "fields": {
+            "ename": "Romance",
+            "kname": "로맨스"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 10751,
+        "fields": {
+            "ename": "Family",
+            "kname": "가족영화"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 10752,
+        "fields": {
+            "ename": "War",
+            "kname": "전쟁"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 10770,
+        "fields": {
+            "ename": "TV Movie",
+            "kname": "TV영화"
+        }
+    }
+]

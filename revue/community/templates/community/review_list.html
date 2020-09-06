@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+  <div class="d-flex justify-content-center mt-3 mb-5">
+    <p class="bounceIn"><a class="btn btn-outline-primary mr-2" href="/community/create/" style='font-size:18px;'>Review Now!</a></p>
+  </div>
+
+  <table class="table mb-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">게시자</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+      <tr>
+        <th scope="row">{{ review.pk }}</th>
+        <td><a href="{% url 'community:detail' review.pk %}">{{ review.title }}</a></td>
+        <td>{{ review.user.nickname }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

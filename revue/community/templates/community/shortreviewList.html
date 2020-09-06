@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h2>한줄평 </h2>
+{% for shortreview in short_reviews %}
+<p>{{shortreview.movie.ktitle}}</p>
+<p>{{shortreview.rating}}</p>
+<p>{{shortreview.content}}</p>
+{% endfor %}
+
+{% endblock %}

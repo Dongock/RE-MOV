@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<h1>We'd like to get to know you more</h1>
+<a href="{% url 'movies:index' %}"class='btn btn-primary' id='go-button' disabled>get started!</a>
+
+<div class='form-group'>
+  <label for ='genreselect'>가장 선호하는 장르를 골라주세요!</label>
+  <select class='form-control' id='genreselect'>
+    {% for genre in genres %}
+    <option id='{{genre.pk}}'>{{ genre.kname }}</option>
+    {% endfor %}
+  </select>
+</div>
+<button class='btn btn-primary' id='selectedGenre'>Select</button>
+<div id='moviechoice'>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  const selectButton = document.querySelector('#selectedGenre')
+  selectButton.addEventListener('click', (e) =>{
+    e.preventDefault()
+    e.stopPropagation()
+    const movieChoice = document.querySelector('#moviechoice')
+    const selectText = document.createElement("h3")
+    selectText.innerHTML = "좋아하는 영화를 <span id='leftcount'>5</span>개 이상 선택해주세요!"
+    const genre = document.querySelector('#genreselect').value
+    axios.get(`/movies/getmovies/${genre}`)
+      .then(res => {
+        console.log(res.data)
+        const cardColumns = document.createElement('div')
+        cardColumns.className = 'card-columns'
+        res.data.forEach(movie => {
+          const card = document.createElement("div")
+          card.className="card"
+          card.id = `${movie.pk}`
+          const cardImage = document.createElement('img')
+          cardImage.src = `https://image.tmdb.org/t/p/w500/${movie.fields.poster_path}`
+          cardImage.className="card-img-top"
+          cardImage.alt = `${movie.fields.etitle}`
+          const cardBody = document.createElement('div')
+          cardBody.className='card-body'
+          const cardTitle = document.createElement('div')
+          cardTitle.className = 'card-title'
+          cardTitle.innerHTML = `${movie.fields.ktitle}`
+          const miniInfo = document.createElement('div')
+          miniInfo.className = 'row justify-content-between'
+          miniInfo.innerHTML = `<small>${movie.fields.original_title}</small><small>${movie.fields.release_date} 개봉</small>`
+          const hr = document.createElement('hr')
+          const heart = document.createElement('i')
+          heart.setAttribute('data-id',`${movie.pk}`)
+          heart.className='fas fa-heart like-button'
+          cardBody.append(cardTitle, miniInfo, hr, heart)
+          card.append(cardImage, cardBody)
+          cardColumns.appendChild(card)
+        })
+        console.log(cardColumns, 333)
+        movieChoice.append(selectText, cardColumns)
+        let movieCount = document.querySelector('#leftcount').innerHTML
+        const likeButtons = document.querySelectorAll('.like-button')
+        likeButtons.forEach(likeButton => {
+          likeButton.addEventListener('click', function(event){
+            const movieId = likeButton.getAttribute('data-id')
+            axios.get(`/movies/${movieId}/movie_like`)
+              .then(response =>{
+                if(response.data.liked === true){
+                  event.target.style.color = 'crimson'
+                } else{
+                  event.target.style.color = 'black'
+                }
+                if(movieCount>0){
+                   movieCount -= 1
+                 }
+        
+                if(movieCount === 0){
+                  document.querySelector('#leftcount').innerHTML = movieCount
+                  const gogoButton = document.querySelector('#go-button')
+                  gogoButton.disabled = false
+                } else{
+                  document.querySelector('#leftcount').innerHTML = movieCount
+                }        
+              })
+              .catch(err =>{
+                console.log(err)
+              })
+
+          })
+
+    
+        })
+
+      })
+      .catch(err => console.log(err))
+      })
+
+
+
+</script>
+{% endblock %}

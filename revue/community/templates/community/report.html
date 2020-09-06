@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}  
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<h2>Report</h2>
+
+{% for report in reports %}
+{% if report.sort == 'review' %}
+  <p>{{report.sort}}</p>
+  <p>{{report.reporter.nickname}}</p>
+  <p>{{report.simple_reason}}</p>
+  <p>{{report.detail_reason}}</p>
+  <p>{{reviews[report.r_id].content}}</p>
+  <p>{{report.isresolved}}</p>
+{% else if report.sort == 'comment' %}
+  <p>{{report.sort}}</p>
+  <p>{{report.reporter.nickname}}</p>
+  <p>{{report.simple_reason}}</p>
+  <p>{{report.detail_reason}}</p>
+  <p>{{comments[report.r_id].content}}</p>
+  <p>{{report.isresolved}}</p>
+{% else if report.sort == 'recomment' %}
+  <p>{{report.sort}}</p>
+  <p>{{report.reporter.nickname}}</p>
+  <p>{{report.simple_reason}}</p>
+  <p>{{report.detail_reason}}</p>
+  <p>{{recomments[report.r_id].content}}</p>
+  <p>{{report.isresolved}}</p>
+{% else %}
+  <p>{{report.sort}}</p>
+  <p>{{report.reporter.nickname}}</p>
+  <p>{{report.simple_reason}}</p>
+  <p>{{report.detail_reason}}</p>
+  <p>{{shortreviews[report.r_id].content}}</p>
+  <p>{{reposrt.isresolved}}</p>
+{% endif %}
+
+{% endfor %}
+
+
+{% endblock %}

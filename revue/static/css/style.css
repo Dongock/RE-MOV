@@ -1,0 +1,13 @@
+
+.recomment-form {
+  display:none;
+}
+
+.rf-hide {
+  display:none;
+  cursor: pointer;
+}
+
+.rf-show{
+  cursor: pointer;
+}

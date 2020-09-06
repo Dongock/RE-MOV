@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Revue-profilepage{% endblock %}
+{% block content %}
+  {% if messages %}
+  <div class="messages">
+      {% for message in messages %}
+      <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+            {{ message }}
+      </div>
+      {% endfor %}
+  </div>
+{% endif %}
+    <h1>{{ user.username }}의 프로필 입니다.</h1>
+    {% if request.user != user %}
+      {% if request.user in user.followers.all %}
+      <a href="{% url 'accounts:follow' user.pk %}">UNFOLLOW</a>
+      {% else %}
+      <a href="{% url 'accounts:follow' user.pk %}">FOLLOW</a>
+      {% endif %}
+    {% endif %}
+    <hr>
+    <button class="btn btn-dark col-3 m-2" data-toggle="modal" data-target="#followingsmodal">Following<span class="ml-3 badge badge-light">{{ user.followings.all | length }}</span></button>
+    <button class="btn btn-dark col-3 m-2" data-toggle="modal" data-target="#followersmodal">Follower<span class="ml-3 badge badge-light">{{ user.followers.all | length }}</span></button>
+
+<div class='row m-3 justify-content-center'>
+    <h3 class='col-12'>작성 글</h3>
+    <table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Movie</th>
+      <th scope="col">Title</th>
+      <th scope="col">Hits</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for review in user.review_set.all %}
+       <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+         <td><a class=" text-dark"data-toggle="tooltip" data-placement="bottom" title="영화 검색하기" href="https://movie.naver.com/movie/search/result.nhn?query={{ review.movie.title }}&section=all&ie=utf8" target="_blank">{{review.movie.title}}</a></td>
+         <td><a class="text-dark" href="{% url 'community:detail' review.pk %}">{{ review.title }}</a></td>
+         <td><p>{{ review.hits }}</p></td>
+
+       </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+</div>
+
+
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="followersmodal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Followers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for follower in user.followers.all %}
+          <a href="{% url 'accounts:profile' follower.username %}" class='text-dark m-3'>{{ follower.username }}</a>
+          <hr>
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="followingsmodal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Followings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for following in user.followings.all %}
+          <a href="{% url 'accounts:profile' following.username %}" class='text-dark m-3'>{{ following.username }}</a>
+          <hr>
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

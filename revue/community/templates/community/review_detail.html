@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+    <h2>{{ review.title }}</h2>
+    <p>생성 : {{ review.created_at }}</p>
+    <p>수정 : {{ review.updated_at }}</p>
+    <hr>
+    <button data-id="{{review.pk}}" data-toggle="modal" data-target="#reviewreport"><i class="fas fa-flag-checkered"></i></button>
+    <p>{{ review.content | safe }}</p>
+    <form action="{% url 'community:delete' review.pk %}" method="POST" class="d-inline">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <button><a href="{% url 'community:update' review.pk %}">Edit</a></button>
+    <hr>
+    <form action="{% url 'community:comments_create' review.pk %}" method="POST">
+		{% csrf_token %}
+		{% bootstrap_form comment_form %}
+		<button>댓글작성</button>
+	</form>
+
+	<h5>댓글 목록</h5>
+	<hr>
+	{% for comment in review.comment_set.all %}
+      <p>{{ comment.content }} {{comment.user.nickname }}</p>
+      <button data-id="{{comment.pk}}" data-toggle="modal" data-target="#commentreport-{{comment.pk}}"><i class="fas fa-flag-checkered"></i></button>
+      <p class='rf-show' id="show-button-{{comment.pk}}" data-id="{{comment.pk}}">답글 쓰기</p>
+      <p class="rf-hide" id="hide-button-{{comment.pk}}" data-id='{{comment.pk}}'>답글 숨기기</p>
+      <form class='recomment-form' id='rcformfor{{comment.pk}}' action ="{% url 'community:recomments_create' review.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form recomment_form %}
+          <button class='btn btn-sm btn-dark'>답글 쓰기</button>
+      </form>    
+      {% for recomment in comment.recomment_set.all %}
+      <button data-id="{{review.pk}}" data-toggle="modal" data-target="#recommentreport-{{recomment.pk}}"><i class="fas fa-flag-checkered"></i></button>
+        <p class='ml-3'>{{ recomment.content }} {{ comment.user.nickname}}</p>
+      {% endfor %}
+      <a href="{% url 'community:comments_delete' review.pk comment.pk %}">댓글 삭제</a>
+    {% endfor %}
+
+
+	<hr>
+    <a href="/community/"> BACK </a>
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="reviewreport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">리뷰 신고하기</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="{% url 'community:report_create' 'review' review.pk %}" method='POST'>
+            {% csrf_token %}
+          {% bootstrap_form report_form %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary">Save changes</input>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% for comment in review.comment_set.all %}
+  <div class="modal fade" id="commentreport-{{comment.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">댓글 신고하기</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="{% url 'community:report_create' 'comment' comment.pk %}" method='POST'>
+          {% csrf_token %}
+          {% bootstrap_form report_form %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary">Save changes</input>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% for recomment in comment.recomment_set.all %}
+  <div class="modal fade" id="recommentreport-{{recomment.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">댓글 신고하기</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="{% url 'community:report_create' 'recomment' recomment.pk %}" method='POST'>
+          {% csrf_token %}
+          {% bootstrap_form report_form %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary">Save changes</input>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+ {% endfor %} 
+{% endblock %}
+
+{% block script %}
+<script>
+    const showButtons = document.querySelectorAll('.rf-show')
+    const hideButtons = document.querySelectorAll('.rf-hide')
+    showButtons.forEach(showButton => {
+        showButton.getAttribute('style', 'cursor:pointer')
+        showButton.addEventListener('click',function(){
+            event.preventDefault()
+            event.stopPropagation()
+            const commentId = showButton.getAttribute('data-id')
+            const shortreviewForm = document.querySelector('#rcformfor'+commentId)
+            shortreviewForm.style.display="block"
+            event.target.style.display = "none"
+            const hide = document.querySelector("#hide-button-"+commentId)
+            hide.style.display="block"
+        })
+    })
+    hideButtons.forEach(hideButton => {
+        hideButton.getAttribute('style', 'cursor:pointer')
+        hideButton.addEventListener('click',function(){
+            
+            event.preventDefault()
+            event.stopPropagation()
+            const commentId = hideButton.getAttribute('data-id')
+            const shortreviewForm = document.querySelector('#rcformfor'+commentId)
+            shortreviewForm.style.display="none"
+            console.log(event.target)
+            event.target.style.display = "none"
+            const show = document.querySelector("#show-button-"+commentId)
+            console.log(show)
+            show.style.display="block"
+        })
+    })
+
+</script>
+{% endblock %}

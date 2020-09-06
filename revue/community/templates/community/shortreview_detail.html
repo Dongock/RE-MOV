@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+    <h1>{{ shortreview.pk }}번 글</h1>
+    <h2>{{ shortreview.title }}</h2>
+    <p>생성 : {{ shortreview.created_at }}</p>
+    <p>수정 : {{ shortreview.updated_at }}</p>
+    <hr>
+    <p>{{ shortreview.content }}</p>
+    <form action="{% url 'shortreviews:delete' shortreview.pk %}" method="POST" class="d-inline">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <button><a href="{% url 'reviews:shortupdate' shortreview.pk %}">Edit</a></button>
+    <hr>
+    <form action="{% url 'reviews:comments_create' shortreview.pk %}" method="POST">
+		{% csrf_token %}
+		{{ comment_form.as_p }}
+		<button>댓글작성</button>
+	</form>
+
+	<h5>댓글 목록</h5>
+	<hr>
+	{% for comment in shortreview.comment_set.all %}
+		<p>{{ comment.content }} {{comment.user_id}}</p>
+		<a href="{% url 'reviews:comments_delete' shortreview.pk comment.pk %}">댓글 삭제</a>
+
+	{% endfor %}
+	<hr>
+    <a href="/movies/srlist/" method="POST"> BACK </a>
+{% endblock %}

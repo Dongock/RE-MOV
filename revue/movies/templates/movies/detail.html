@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Re:MOV - {{movie.ktitle}}
+{% endblock %}
+
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class='row justify-content-center mb-5'>
+  <img src="https://image.tmdb.org/t/p/w780/{{ movie.backdrop_path }}" class="img-fluid col-8">
+</div>
+<div class='row justify-content-center'>
+  <h4 class='col-auto'>{{movie.ktitle}}</h4>
+</div>
+<div class='row'>
+  <small>{{movie.original_title}}</small><br>
+  <p>{{ movie.koverview }}</p>
+</div>
+<hr>
+
+
+<div class="tab_wrap">
+  <div class="tab_menu_container">
+    <button class="tab_menu_btn1 on text-danger" type="button">리뷰</button>
+    <button class="tab_menu_btn2 text-danger" type="button">한줄평</button>
+  </div> <!-- tab_menu_container e -->
+
+  <div class="tab_box_container">
+    <div class="tab_box1 on">
+        <a class='btn btn-outline-dark' href="{% url 'community:create' movie.pk %}"> 리뷰 작성하러 가기</a>
+      {% for review in reviews %}
+        <h5>#{{ review.pk }}</h5>
+        <br>
+        <h3>Title: {{ review.title }}</h3>
+        <p>Rank: {{ review.rating }}</p>
+        <a href="{% url 'community:detail' review.pk %}">DETAIL</a>
+        <hr>
+      {% endfor %}
+    </div?>
+    <div class="tab_box2">
+      {% for shortreview in shortreviews %}
+      <h5>#{{ shortreview.pk }}</h5>
+      <br>
+      <p>Contents: {{ shortreview.content }}</p>
+      <p>Rank: {{ shortreview.rating }}</p>
+      <hr>
+    {% endfor %}
+    </div>
+  </div> <!-- tab_box_container e -->
+</div> <!-- tab_wrap e -->
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+          {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<h2>검색결과</h2>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <p class="nav-link" href="#">통합검색</p>
+    </li>
+    <li class="nav-item">
+      <p class="nav-link" href="#">영화</p>
+    </li>
+    <li class="nav-item">
+      <p class="nav-link active" href="#">리뷰</p>
+    </li>
+    <li class="nav-item">
+      <p class="nav-link" href="#">사용자</p>
+    </li>
+  </ul>
+
+<h3>Movie</h3>
+{% for movie in movies %}
+ <a href="{% url 'movies:detail' movie.pk %}">{{movie.ktitle}}</a> 
+{% empty %}
+ <p> 검색 결과가 존재하지 않습니다. </p>
+{% endfor %}
+
+<h3>Review</h3>
+{% for review in reviews %}
+ <a href="{% url 'community:detail' review.pk %}">{{review.title}}</a> 
+{% empty %}
+ <p> 검색 결과가 존재하지 않습니다. </p>
+{% endfor %}
+
+<h3>User</h3>
+{% for user in users %}
+ <a href="{% url 'accounts:profile' user.username %}">{{user.nickname}}</a> 
+{% empty %}
+ <p> 검색 결과가 존재하지 않습니다. </p>
+{% endfor %}
+
+{% endblock %}
